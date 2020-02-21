@@ -1,0 +1,3 @@
+INCLUDE_DIRECTORIES(${GLAD_INCLUDE_DIR})
+
+add_library("GLAD" STATIC "src/glad.c")

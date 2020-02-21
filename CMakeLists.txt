@@ -1,0 +1,39 @@
+cmake_minimum_required (VERSION 3.8 FATAL_ERROR)
+
+# C++/Compiler setting
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+
+set(ENGINE_PROJECT_NAME "OpenGL Mini Engine")
+set(BUILD_FOLDER_NAME "build")
+
+# CMake Settings
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+project (${ENGINE_PROJECT_NAME})
+
+#Main Engine Directory
+set(ENGINE_ROOT_SLN_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
+set(ENGINE_SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
+set(THIRD_PARTY_LIB_DIR "${ENGINE_ROOT_SLN_DIR}/third-party")
+set(ENGINE_BUILD_LIBS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/build/Libs")
+
+# Third-Party directories
+# GLFW
+set(GLFW_LIB_DIR "${THIRD_PARTY_LIB_DIR}/GLFW")
+set(GLFW_LIB_INCLUDE "${THIRD_PARTY_LIB_DIR}/GLFW/include")
+set(GLFW_LIB_LIB "${THIRD_PARTY_LIB_DIR}/GLFW/lib")
+
+# GLM
+set(GLM_SOURCE_DIR "${THIRD_PARTY_LIB_DIR}/GLM")
+
+# GLAD
+set(GLAD_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src/glad/include")
+
+#Engine/Engine Tools Source Code
+set(ENGINE_LIBRARY_NAME "OGLME")
+
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/build/Libs")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
+
+# Sources
+add_subdirectory(src)
