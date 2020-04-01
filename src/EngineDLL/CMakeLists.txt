@@ -16,5 +16,6 @@ file(GLOB_RECURSE SourceFiles
 add_compile_definitions("OGLME_BUILD_ENGINE")
 
 add_library(${ENGINE_LIBRARY_NAME} SHARED ${SourceFiles})
+target_link_libraries(${ENGINE_LIBRARY_NAME} glad.lib)
 
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SourceFiles})

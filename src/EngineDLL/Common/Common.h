@@ -14,3 +14,6 @@
 #else
 	#define FORCE_INLINE inline
 #endif
+
+#include <GLAD/glad.h>
+#include <iostream>
